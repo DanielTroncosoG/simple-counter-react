@@ -4,38 +4,38 @@ import PropTypes from "prop-types";
 import "bootstrap";
 import "../styles/index.scss";
 
-function SimpleCounter({props}) {
+function SimpleCounter({ one, two, three, four, five, six }) {
 	return (
 		<div className="Counter">
 			<div className="Timer">
 				<i className="fas fa-clock"></i>
 			</div>
-			<div className="Sixth-digit">{props.six}</div>
-			<div className="Fifth-digit">{props.five}</div>
-			<div className="Fourth-digit">{props.four}</div>
-			<div className="Third-digit">{props.three}</div>
-			<div className="Second-digit">{props.two}</div>
-			<div className="First-digit">{props.one}</div>
+			<div className="Sixth-dig">{six}</div>
+			<div className="Fifth-dig">{five}</div>
+			<div className="Fourth-dig">{four}</div>
+			<div className="Third-dig">{three}</div>
+			<div className="Second-dig">{two}</div>
+			<div className="First-dig">{one}</div>
 		</div>
 	);
 }
-SimpleCounter.PropTypes = {
-	one: PropTypes.number,
-	two: PropTypes.number,
-	three: PropTypes.number,
-	four: PropTypes.number,
-	five: PropTypes.number,
-	six: PropTypes.number
+SimpleCounter.propTypes = {
+	one: PropTypes.any,
+	two: PropTypes.any,
+	three: PropTypes.any,
+	four: PropTypes.any,
+	five: PropTypes.any,
+	six: PropTypes.any
 };
 //render your react application
 let c = 0;
 setInterval(function() {
-	const first = c % 10;
-	const second = Math.floor(c / 10) % 10;
-	const third = Math.floor(c / 100) % 10;
-	const fourth = Math.floor(c / 1000) % 10;
-	const fifth = Math.floor(c / 10000) % 10;
-	const sixth = Math.floor(c / 100000) % 10;
+	let first = c % 10;
+	let second = Math.floor(c / 10) % 10;
+	let third = Math.floor(c / 100) % 10;
+	let fourth = Math.floor(c / 1000) % 10;
+	let fifth = Math.floor(c / 10000) % 10;
+	let sixth = Math.floor(c / 100000) % 10;
 	c++;
 	ReactDOM.render(
 		<SimpleCounter
@@ -48,4 +48,4 @@ setInterval(function() {
 		/>,
 		document.querySelector("#app")
 	);
-}, 10);
+}, 1000);
